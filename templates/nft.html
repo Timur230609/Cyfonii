@@ -2,6 +2,58 @@
 {% load static %}
 {% block title %}NFT{% endblock title %}
 {% block content %}
+
+    <!-- Header -->
+    <header id="header_main" class="header">
+        <div class="container big">
+            <div class="row">
+                <div class="col-12">
+                    <div class="header__body">
+                        <div class="header__logo">
+                            <a href="{% url 'home-page' %}">
+                                <img id="site-logo" src="{% static 'assets/images/logo/logo.png' %}"
+                                alt="Peson" width="160" height="38"
+                                data-retina="assets/images/logo/logo@2x.png" data-width="160"
+                                data-height="38">
+                            </a>
+                        </div>
+                        <div class="header__right">
+                            <nav id="main-nav" class="main-nav">
+                                <ul id="menu-primary-menu" class="menu">
+                                    <li class="menu-item menu-item-has-children menu-current-item">
+                                    <li class="menu-item current-item"><a href="{% url 'home-page' %}">Home</a></li> 
+                                    <li class="menu-item current-item"><a href="{% url 'blog-page' %}">Blog</a></li> 
+                                    <li class="menu-item current-item"><a href="{% url 'blogdetal-page' %}">Blog detail</a></li> 
+
+                                    <li class="menu-item">
+                                        <a href="{% url 'about-page' %}">About</a>
+                                    </li>
+                                        <li class="menu-item">
+                                        <a href="{% url 'team-page' %}">Team</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="{% url 'contact-page' %}">Contact</a>
+                                    </li>                                     
+                                </ul>
+                            </nav>
+                            <div class="mobile-button"><span></span></div>
+                        </div>
+
+                        <div class="header__action">
+                            {% comment %} <a href="#" class="search-btn">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="9.7659" cy="9.76639" r="8.98856" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M16.0176 16.4849L19.5416 19.9997" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>                                    
+                            </a> {% endcomment %}
+                            <a href="{% url 'contact-page' %}" class="action-btn"><span>Join Now</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- end Header -->
     <!-- Pagetitle -->
     <section class="page-title">
         <div class="shape"></div>
@@ -14,7 +66,7 @@
                             <h4 class="title">NFTs</h4>
     
                             <ul class="breacrumb">
-                                <li><a href="index-2.html">Home</a></li>
+                                <li><a href="{% url 'home-page' %}">Home</a></li>
                                 <li><p>Explore</p></li>
                                 <li><p>NFTs</p></li>
                             </ul>
@@ -54,7 +106,6 @@
         </div>
     </section>
     <!-- Pagetitle -->
-
     <section class="nft">
         <div class="container">
             <div class="row">
@@ -69,34 +120,13 @@
                                 </svg>
                             </a>
                         </form>
-                        <div id="category" class="dropdown">
-                            <a href="#" class="btn-selector nolink ">All categories</a>
-                            <ul class="">
-                                <li><span>All Items</span></li>
-                                <li><span>Bundles</span></li>
-                            </ul>
-                        </div>
-                        <div id="buy" class="dropdown">
-                            <a href="#" class="btn-selector nolink ">Buy now</a>
-                            <ul class="">
-                                <li><span>All Items</span></li>
-                                <li><span>Bundles</span></li>
-                            </ul>
-                        </div>
-                        <div id="item" class="dropdown">
-                            <a href="#" class="btn-selector nolink ">All item</a>
-                            <ul class="">
-                                <li><span>All Items</span></li>
-                                <li><span>Bundles</span></li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
 
                 <div class="col-xl-3 col-md-6">
                     <div class="nft-item">                               
                         <div class="card-media">
-                            <a href="#"><img src="assets/images/item/item-01.png" alt="Image"></a>
+                            <a href="#"><img src="{% static 'assets/images/item/item-01.png' %}" alt="Image"></a>
                             
                             
                         </div>
@@ -106,11 +136,11 @@
                         <div class="meta-info">
                             <div class="author">
                                 <div class="avatar">
-                                    <img src="assets/images/layouts/avt-01.png" alt="Image">
+                                    <img src="{% static 'assets/images/layouts/avt-01.png' %}" alt="Image">
                                 </div>
                                 <div class="info">
                                     <span>Owned by</span>
-                                    <a href="author02.html" class="h6">Roger Herwitz</a>
+                                    <a href="#" class="h6">Roger Herwitz</a>
                                 </div>
                             </div>
                             <a class="wishlist-button heart">
@@ -137,7 +167,7 @@
                 <div class="col-xl-3 col-md-6">
                     <div class="nft-item">                               
                         <div class="card-media">
-                            <a href="#"><img src="assets/images/item/item-02.png" alt="Image"></a>
+                            <a href="#"><img src="{% static 'assets/images/item/item-02.png' %}" alt="Image"></a>
                             
                             
                         </div>
@@ -147,11 +177,11 @@
                         <div class="meta-info">
                             <div class="author">
                                 <div class="avatar">
-                                    <img src="assets/images/layouts/avt-01.png" alt="Image">
+                                    <img src="{% static 'assets/images/layouts/avt-01.png' %}" alt="Image">
                                 </div>
                                 <div class="info">
                                     <span>Owned by</span>
-                                    <a href="author02.html" class="h6">Roger Herwitz</a>
+                                    <a href="#" class="h6">Roger Herwitz</a>
                                 </div>
                             </div>
                             <a class="wishlist-button heart">
@@ -178,7 +208,7 @@
                 <div class="col-xl-3 col-md-6">
                     <div class="nft-item">                               
                         <div class="card-media">
-                            <a href="#"><img src="assets/images/item/item-03.png" alt="Image"></a>
+                            <a href="#"><img src="{% static 'assets/images/item/item-03.png' %}" alt="Image"></a>
                             
                             
                         </div>
@@ -188,11 +218,11 @@
                         <div class="meta-info">
                             <div class="author">
                                 <div class="avatar">
-                                    <img src="assets/images/layouts/avt-01.png" alt="Image">
+                                    <img src="{% static 'assets/images/layouts/avt-01.png' %}" alt="Image">
                                 </div>
                                 <div class="info">
                                     <span>Owned by</span>
-                                    <a href="author02.html" class="h6">Roger Herwitz</a>
+                                    <a href="#" class="h6">Roger Herwitz</a>
                                 </div>
                             </div>
                             <a class="wishlist-button heart">
@@ -219,7 +249,7 @@
                 <div class="col-xl-3 col-md-6">
                     <div class="nft-item">                               
                         <div class="card-media">
-                            <a href="#"><img src="assets/images/item/item-04.png" alt="Image"></a>
+                            <a href="#"><img src="{% static 'assets/images/item/item-04.png' %}" alt="Image"></a>
                             
                             
                         </div>
@@ -229,11 +259,11 @@
                         <div class="meta-info">
                             <div class="author">
                                 <div class="avatar">
-                                    <img src="assets/images/layouts/avt-01.png" alt="Image">
+                                    <img src="{% static 'assets/images/layouts/avt-01.png' %}" alt="Image">
                                 </div>
                                 <div class="info">
                                     <span>Owned by</span>
-                                    <a href="author02.html" class="h6">Roger Herwitz</a>
+                                    <a href="#" class="h6">Roger Herwitz</a>
                                 </div>
                             </div>
                             <a class="wishlist-button heart">
@@ -260,7 +290,7 @@
                 <div class="col-xl-3 col-md-6">
                     <div class="nft-item">                               
                         <div class="card-media">
-                            <a href="#"><img src="assets/images/item/item-05.png" alt="Image"></a>
+                            <a href="#"><img src="{% static 'assets/images/item/item-05.png' %}" alt="Image"></a>
                             
                             
                         </div>
@@ -270,11 +300,11 @@
                         <div class="meta-info">
                             <div class="author">
                                 <div class="avatar">
-                                    <img src="assets/images/layouts/avt-01.png" alt="Image">
+                                    <img src="{% static 'assets/images/layouts/avt-01.png' %}" alt="Image">
                                 </div>
                                 <div class="info">
                                     <span>Owned by</span>
-                                    <a href="author02.html" class="h6">Roger Herwitz</a>
+                                    <a href="#" class="h6">Roger Herwitz</a>
                                 </div>
                             </div>
                             <a class="wishlist-button heart">
@@ -301,7 +331,7 @@
                 <div class="col-xl-3 col-md-6">
                     <div class="nft-item">                               
                         <div class="card-media">
-                            <a href="#"><img src="assets/images/item/item-06.png" alt="Image"></a>
+                            <a href="#"><img src="{% static 'assets/images/item/item-06.png' %}" alt="Image"></a>
                             
                             
                         </div>
@@ -311,11 +341,11 @@
                         <div class="meta-info">
                             <div class="author">
                                 <div class="avatar">
-                                    <img src="assets/images/layouts/avt-01.png" alt="Image">
+                                    <img src="{% static 'assets/images/layouts/avt-01.png' %}" alt="Image">
                                 </div>
                                 <div class="info">
                                     <span>Owned by</span>
-                                    <a href="author02.html" class="h6">Roger Herwitz</a>
+                                    <a href="#" class="h6">Roger Herwitz</a>
                                 </div>
                             </div>
                             <a class="wishlist-button heart">
@@ -342,7 +372,7 @@
                 <div class="col-xl-3 col-md-6">
                     <div class="nft-item">                               
                         <div class="card-media">
-                            <a href="#"><img src="assets/images/item/item-07.png" alt="Image"></a>
+                            <a href="#"><img src="{% static 'assets/images/item/item-07.png' %}" alt="Image"></a>
                             
                             
                         </div>
@@ -352,11 +382,11 @@
                         <div class="meta-info">
                             <div class="author">
                                 <div class="avatar">
-                                    <img src="assets/images/layouts/avt-01.png" alt="Image">
+                                    <img src="{% static 'assets/images/layouts/avt-01.png' %}" alt="Image">
                                 </div>
                                 <div class="info">
                                     <span>Owned by</span>
-                                    <a href="author02.html" class="h6">Roger Herwitz</a>
+                                    <a href="#" class="h6">Roger Herwitz</a>
                                 </div>
                             </div>
                             <a class="wishlist-button heart">
@@ -383,7 +413,7 @@
                 <div class="col-xl-3 col-md-6">
                     <div class="nft-item">                               
                         <div class="card-media">
-                            <a href="#"><img src="assets/images/item/item-08.png" alt="Image"></a>
+                            <a href="#"><img src="{% static 'assets/images/item/item-08.png' %}" alt="Image"></a>
                             
                             
                         </div>
@@ -393,175 +423,11 @@
                         <div class="meta-info">
                             <div class="author">
                                 <div class="avatar">
-                                    <img src="assets/images/layouts/avt-01.png" alt="Image">
+                                    <img src="{% static 'assets/images/layouts/avt-01.png' %}" alt="Image">
                                 </div>
                                 <div class="info">
                                     <span>Owned by</span>
-                                    <a href="author02.html" class="h6">Roger Herwitz</a>
-                                </div>
-                            </div>
-                            <a class="wishlist-button heart">
-                                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11.75 4.3125C11.75 2.86292 10.5256 1.6875 9.01533 1.6875C7.88658 1.6875 6.91708 2.34433 6.5 3.28175C6.08292 2.34433 5.11342 1.6875 3.98408 1.6875C2.475 1.6875 1.25 2.86292 1.25 4.3125C1.25 8.52417 6.5 11.3125 6.5 11.3125C6.5 11.3125 11.75 8.52417 11.75 4.3125Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                    
-                                <span class="number-like"> 3432</span></a>
-                        </div>
-                        <div class="card-bottom style-explode">
-                            <div class="price">
-                                <span class="icon-logo-01"></span>
-                                <div class="price-details">
-                                    <span> Current Bid</span>
-                                    <h6>0.45 ETH</h6>
-                                </div>
-                            </div>
-                            <div class="button-place-bid">
-                                <a href="#" data-toggle="modal" data-target="#popup_bid" class="sc-button"><span>Place Bid</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6">
-                    <div class="nft-item">                               
-                        <div class="card-media">
-                            <a href="#"><img src="assets/images/item/item-05.png" alt="Image"></a>
-                            
-                            
-                        </div>
-                        <div class="card-title">
-                            <a href="#" class="h5">Pixel Art Addicted</a>
-                        </div>
-                        <div class="meta-info">
-                            <div class="author">
-                                <div class="avatar">
-                                    <img src="assets/images/layouts/avt-01.png" alt="Image">
-                                </div>
-                                <div class="info">
-                                    <span>Owned by</span>
-                                    <a href="author02.html" class="h6">Roger Herwitz</a>
-                                </div>
-                            </div>
-                            <a class="wishlist-button heart">
-                                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11.75 4.3125C11.75 2.86292 10.5256 1.6875 9.01533 1.6875C7.88658 1.6875 6.91708 2.34433 6.5 3.28175C6.08292 2.34433 5.11342 1.6875 3.98408 1.6875C2.475 1.6875 1.25 2.86292 1.25 4.3125C1.25 8.52417 6.5 11.3125 6.5 11.3125C6.5 11.3125 11.75 8.52417 11.75 4.3125Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                    
-                                <span class="number-like"> 3432</span></a>
-                        </div>
-                        <div class="card-bottom style-explode">
-                            <div class="price">
-                                <span class="icon-logo-01"></span>
-                                <div class="price-details">
-                                    <span> Current Bid</span>
-                                    <h6>0.45 ETH</h6>
-                                </div>
-                            </div>
-                            <div class="button-place-bid">
-                                <a href="#" data-toggle="modal" data-target="#popup_bid" class="sc-button"><span>Place Bid</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6">
-                    <div class="nft-item">                               
-                        <div class="card-media">
-                            <a href="#"><img src="assets/images/item/item-06.png" alt="Image"></a>
-                            
-                            
-                        </div>
-                        <div class="card-title">
-                            <a href="#" class="h5">3D Digital Artwork</a>
-                        </div>
-                        <div class="meta-info">
-                            <div class="author">
-                                <div class="avatar">
-                                    <img src="assets/images/layouts/avt-01.png" alt="Image">
-                                </div>
-                                <div class="info">
-                                    <span>Owned by</span>
-                                    <a href="author02.html" class="h6">Roger Herwitz</a>
-                                </div>
-                            </div>
-                            <a class="wishlist-button heart">
-                                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11.75 4.3125C11.75 2.86292 10.5256 1.6875 9.01533 1.6875C7.88658 1.6875 6.91708 2.34433 6.5 3.28175C6.08292 2.34433 5.11342 1.6875 3.98408 1.6875C2.475 1.6875 1.25 2.86292 1.25 4.3125C1.25 8.52417 6.5 11.3125 6.5 11.3125C6.5 11.3125 11.75 8.52417 11.75 4.3125Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                    
-                                <span class="number-like"> 3432</span></a>
-                        </div>
-                        <div class="card-bottom style-explode">
-                            <div class="price">
-                                <span class="icon-logo-01"></span>
-                                <div class="price-details">
-                                    <span> Current Bid</span>
-                                    <h6>0.45 ETH</h6>
-                                </div>
-                            </div>
-                            <div class="button-place-bid">
-                                <a href="#" data-toggle="modal" data-target="#popup_bid" class="sc-button"><span>Place Bid</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6">
-                    <div class="nft-item">                               
-                        <div class="card-media">
-                            <a href="#"><img src="assets/images/item/item-07.png" alt="Image"></a>
-                            
-                            
-                        </div>
-                        <div class="card-title">
-                            <a href="#" class="h5">3D Digital Artwork</a>
-                        </div>
-                        <div class="meta-info">
-                            <div class="author">
-                                <div class="avatar">
-                                    <img src="assets/images/layouts/avt-01.png" alt="Image">
-                                </div>
-                                <div class="info">
-                                    <span>Owned by</span>
-                                    <a href="author02.html" class="h6">Roger Herwitz</a>
-                                </div>
-                            </div>
-                            <a class="wishlist-button heart">
-                                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11.75 4.3125C11.75 2.86292 10.5256 1.6875 9.01533 1.6875C7.88658 1.6875 6.91708 2.34433 6.5 3.28175C6.08292 2.34433 5.11342 1.6875 3.98408 1.6875C2.475 1.6875 1.25 2.86292 1.25 4.3125C1.25 8.52417 6.5 11.3125 6.5 11.3125C6.5 11.3125 11.75 8.52417 11.75 4.3125Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                    
-                                <span class="number-like"> 3432</span></a>
-                        </div>
-                        <div class="card-bottom style-explode">
-                            <div class="price">
-                                <span class="icon-logo-01"></span>
-                                <div class="price-details">
-                                    <span> Current Bid</span>
-                                    <h6>0.45 ETH</h6>
-                                </div>
-                            </div>
-                            <div class="button-place-bid">
-                                <a href="#" data-toggle="modal" data-target="#popup_bid" class="sc-button"><span>Place Bid</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6">
-                    <div class="nft-item">                               
-                        <div class="card-media">
-                            <a href="#"><img src="assets/images/item/item-08.png" alt="Image"></a>
-                            
-                            
-                        </div>
-                        <div class="card-title">
-                            <a href="#" class="h5">3D Digital Artwork</a>
-                        </div>
-                        <div class="meta-info">
-                            <div class="author">
-                                <div class="avatar">
-                                    <img src="assets/images/layouts/avt-01.png" alt="Image">
-                                </div>
-                                <div class="info">
-                                    <span>Owned by</span>
-                                    <a href="author02.html" class="h6">Roger Herwitz</a>
+                                    <a href="#" class="h6">Roger Herwitz</a>
                                 </div>
                             </div>
                             <a class="wishlist-button heart">

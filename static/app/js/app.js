@@ -307,23 +307,37 @@
             });
         });
     });
-
-    var arlo_tm_animate_text = function() {
-        var animateSpan = jQuery(".arlo_tm_animation_text_word");
-        animateSpan.typed({ strings: ["NFTs", "Art", "Music"], loop: true, startDelay: 1e3, backDelay: 2e3 });
-    }
-
-    var arlo_tm_about_animation = function() {
-        if ($(".parallax").length > 0) {
-            var scene = $(".parallax").get(0);
-            var parallax = new Parallax(scene, {
-                relativeInput: true,
-                onReady: function () {
-                    console.log("ready!");
-                },
+// Typing animation
+var arlo_tm_animate_text = function() {
+    var animateSpan = jQuery(".arlo_tm_animation_text_word");
+    if (animateSpan.length > 0) {
+        animateSpan.each(function () {
+            new Typed(this, {
+                strings: ["Backend", "Dasturlash", "Matematika"],
+                typeSpeed: 50,     // Harf yozish tezligi
+                backSpeed: 30,    // Qaytarish tezligi
+                loop: true,       // Animatsiya qaytariladi
+                startDelay: 1000, // Animatsiya boshlanishi uchun kechikish (ms)
+                backDelay: 2000,  // Qaytarishdan oldin kechikish (ms)
             });
-        }
+        });
     }
+}
+
+// Parallax animation
+var arlo_tm_about_animation = function() {
+    var parallaxElement = $(".parallax");
+    if (parallaxElement.length > 0) {
+        var scene = parallaxElement.get(0);
+        new Parallax(scene, {
+            relativeInput: true,
+            onReady: function () {
+                console.log("Parallax animation ready!");
+            },
+        });
+    }
+}
+
 
     var dropdown = function(id){
         var obj = $(id+'.dropdown');

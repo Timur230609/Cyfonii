@@ -2,6 +2,58 @@
 {% load static %}
 {% block title %}Team{% endblock title %}
 {% block content %}
+
+    <!-- Header -->
+    <header id="header_main" class="header">
+        <div class="container big">
+            <div class="row">
+                <div class="col-12">
+                    <div class="header__body">
+                        <div class="header__logo">
+                            <a href="{% url 'home-page' %}">
+                                <img id="site-logo" src="{% static 'assets/images/logo/logo.png' %}"
+                                alt="Peson" width="160" height="38"
+                                data-retina="assets/images/logo/logo@2x.png" data-width="160"
+                                data-height="38">
+                            </a>
+                        </div>
+                        <div class="header__right">
+                            <nav id="main-nav" class="main-nav">
+                                <ul id="menu-primary-menu" class="menu">
+                                    <li class="menu-item menu-item-has-children menu-current-item">
+                                    <li class="menu-item current-item"><a href="{% url 'home-page' %}">Home</a></li> 
+                                    <li class="menu-item current-item"><a href="{% url 'blog-page' %}">Blog</a></li> 
+                                    <li class="menu-item current-item"><a href="{% url 'blogdetal-page' %}">Blog detail</a></li> 
+
+                                    <li class="menu-item">
+                                        <a href="{% url 'about-page' %}">About</a>
+                                    </li>
+                                        <li class="menu-item">
+                                        <a href="{% url 'team-page' %}">Team</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="{% url 'contact-page' %}">Contact</a>
+                                    </li>                                     
+                                </ul>
+                            </nav>
+                            <div class="mobile-button"><span></span></div>
+                        </div>
+
+                        <div class="header__action">
+                            {% comment %} <a href="#" class="search-btn">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="9.7659" cy="9.76639" r="8.98856" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M16.0176 16.4849L19.5416 19.9997" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>                                    
+                            </a> {% endcomment %}
+                            <a href="{% url 'contact-page' %}" class="action-btn"><span>Join Now</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- end Header -->
     <!-- Pagetitle -->
     <section class="page-title">
         <div class="shape"></div>
@@ -14,7 +66,7 @@
                             <h4 class="title">Our Team</h4>
     
                             <ul class="breacrumb">
-                                <li><a href="index-2.html">Home</a></li>
+                                <li><a href="{% url 'home-page' %}">Home</a></li>
                                 <li><p>Explore</p></li>
                                 <li><p>Team</p></li>
                             </ul>
@@ -71,7 +123,7 @@
                 <div class="col-xl-3 col-md-6">
                     <div class="team-box">
                         <div class="image">
-                            <a href="team.html"><img src="assets/images/layouts/team-01.png" alt=""></a>
+                            <a href="{% url 'team-page' %}"><img src="{% static 'assets/images/layouts/team-01.png' %}      " alt=""></a>
 
                             <ul class="list-social">
                                 <li><a href="#">
@@ -86,7 +138,7 @@
                             </ul>
                         </div>
                         <div class="content">
-                            <a href="team.html" class="h5 name">Jane Cooper</a>
+                            <a href="{% url 'team-page' %}" class="h5 name">Jane Cooper</a>
                             <p class="postion">
                                 Founder & CEO
                             </p>
@@ -98,7 +150,7 @@
                 <div class="col-xl-3 col-md-6">
                     <div class="team-box">
                         <div class="image">
-                            <a href="team.html"><img src="assets/images/layouts/team-02.png" alt=""></a>
+                            <a href="{% url 'team-page' %}"><img src="{% static 'assets/images/layouts/team-02.png' %}      " alt=""></a>
 
                             <ul class="list-social">
                                 <li><a href="#">
@@ -113,7 +165,7 @@
                             </ul>
                         </div>
                         <div class="content">
-                            <a href="team.html" class="h5 name">Jenny Wilson</a>
+                            <a href="{% url 'team-page' %}" class="h5 name">Jenny Wilson</a>
                             <p class="postion">
                                 Designer
                             </p>
@@ -125,7 +177,7 @@
                 <div class="col-xl-3 col-md-6">
                     <div class="team-box">
                         <div class="image">
-                            <a href="team.html"><img src="assets/images/layouts/team-03.png" alt=""></a>
+                            <a href="{% url 'team-page' %}"><img src="{% static 'assets/images/layouts/team-03.png' %}      " alt=""></a>
 
                             <ul class="list-social">
                                 <li><a href="#">
@@ -140,7 +192,7 @@
                             </ul>
                         </div>
                         <div class="content">
-                            <a href="team.html" class="h5 name">Courtney Henry</a>
+                            <a href="{% url 'team-page' %}" class="h5 name">Courtney Henry</a>
                             <p class="postion">
                                 Founder & CEO
                             </p>
@@ -152,7 +204,7 @@
                 <div class="col-xl-3 col-md-6">
                     <div class="team-box">
                         <div class="image">
-                            <a href="team.html"><img src="assets/images/layouts/team-04.png" alt=""></a>
+                            <a href="{% url 'team-page' %}"><img src="{% static 'assets/images/layouts/team-04.png' %}      " alt=""></a>
 
                             <ul class="list-social">
                                 <li><a href="#">
@@ -167,7 +219,7 @@
                             </ul>
                         </div>
                         <div class="content">
-                            <a href="team.html" class="h5 name">Bobby Fischer</a>
+                            <a href="{% url 'team-page' %}" class="h5 name">Bobby Fischer</a>
                             <p class="postion">
                                 Designer
                             </p>
@@ -179,7 +231,7 @@
                 <div class="col-xl-3 col-md-6">
                     <div class="team-box">
                         <div class="image">
-                            <a href="team.html"><img src="assets/images/layouts/team-05.png" alt=""></a>
+                            <a href="{% url 'team-page' %}"><img src="{% static 'assets/images/layouts/team-05.png' %}      " alt=""></a>
 
                             <ul class="list-social">
                                 <li><a href="#">
@@ -194,7 +246,7 @@
                             </ul>
                         </div>
                         <div class="content">
-                            <a href="team.html" class="h5 name">Devon Lane</a>
+                            <a href="{% url 'team-page' %}" class="h5 name">Devon Lane</a>
                             <p class="postion">
                                 Founder & CEO
                             </p>
@@ -206,7 +258,7 @@
                 <div class="col-xl-3 col-md-6">
                     <div class="team-box">
                         <div class="image">
-                            <a href="team.html"><img src="assets/images/layouts/team-06.png" alt=""></a>
+                            <a href="{% url 'team-page' %}"><img src="{% static 'assets/images/layouts/team-06.png' %}      " alt=""></a>
 
                             <ul class="list-social">
                                 <li><a href="#">
@@ -221,7 +273,7 @@
                             </ul>
                         </div>
                         <div class="content">
-                            <a href="team.html" class="h5 name">Jane Cooper</a>
+                            <a href="{% url 'team-page' %}" class="h5 name">Jane Cooper</a>
                             <p class="postion">
                                 Designer
                             </p>
@@ -233,7 +285,7 @@
                 <div class="col-xl-3 col-md-6">
                     <div class="team-box">
                         <div class="image">
-                            <a href="team.html"><img src="assets/images/layouts/team-07.png" alt=""></a>
+                            <a href="{% url 'team-page' %}"><img src="{% static 'assets/images/layouts/team-07.png' %}      " alt=""></a>
 
                             <ul class="list-social">
                                 <li><a href="#">
@@ -248,7 +300,7 @@
                             </ul>
                         </div>
                         <div class="content">
-                            <a href="team.html" class="h5 name">Jenny Wilson</a>
+                            <a href="{% url 'team-page' %}" class="h5 name">Jenny Wilson</a>
                             <p class="postion">
                                 Founder & CEO
                             </p>
@@ -260,7 +312,7 @@
                 <div class="col-xl-3 col-md-6">
                     <div class="team-box">
                         <div class="image">
-                            <a href="team.html"><img src="assets/images/layouts/team-08.png" alt=""></a>
+                            <a href="{% url 'team-page' %}"><img src="{% static 'assets/images/layouts/team-08.png' %}      " alt=""></a>
 
                             <ul class="list-social">
                                 <li><a href="#">
@@ -275,7 +327,7 @@
                             </ul>
                         </div>
                         <div class="content">
-                            <a href="team.html" class="h5 name">Courtney Henry</a>
+                            <a href="{% url 'team-page' %}" class="h5 name">Courtney Henry</a>
                             <p class="postion">
                                 Designer
                             </p>
@@ -287,7 +339,7 @@
                 <div class="col-xl-3 col-md-6">
                     <div class="team-box">
                         <div class="image">
-                            <a href="team.html"><img src="assets/images/layouts/team-01.png" alt=""></a>
+                            <a href="{% url 'team-page' %}"><img src="{% static 'assets/images/layouts/team-01.png' %}      " alt=""></a>
 
                             <ul class="list-social">
                                 <li><a href="#">
@@ -302,7 +354,7 @@
                             </ul>
                         </div>
                         <div class="content">
-                            <a href="team.html" class="h5 name">Jane Cooper</a>
+                            <a href="{% url 'team-page' %}" class="h5 name">Jane Cooper</a>
                             <p class="postion">
                                 Founder & CEO
                             </p>
@@ -314,7 +366,7 @@
                 <div class="col-xl-3 col-md-6">
                     <div class="team-box">
                         <div class="image">
-                            <a href="team.html"><img src="assets/images/layouts/team-02.png" alt=""></a>
+                            <a href="{% url 'team-page' %}"><img src="{% static 'assets/images/layouts/team-02.png' %}      " alt=""></a>
 
                             <ul class="list-social">
                                 <li><a href="#">
@@ -329,7 +381,7 @@
                             </ul>
                         </div>
                         <div class="content">
-                            <a href="team.html" class="h5 name">Jenny Wilson</a>
+                            <a href="{% url 'team-page' %}" class="h5 name">Jenny Wilson</a>
                             <p class="postion">
                                 Designer
                             </p>
@@ -341,7 +393,7 @@
                 <div class="col-xl-3 col-md-6">
                     <div class="team-box">
                         <div class="image">
-                            <a href="team.html"><img src="assets/images/layouts/team-03.png" alt=""></a>
+                            <a href="{% url 'team-page' %}"><img src="{% static 'assets/images/layouts/team-03.png' %}      " alt=""></a>
 
                             <ul class="list-social">
                                 <li><a href="#">
@@ -356,7 +408,7 @@
                             </ul>
                         </div>
                         <div class="content">
-                            <a href="team.html" class="h5 name">Courtney Henry</a>
+                            <a href="{% url 'team-page' %}" class="h5 name">Courtney Henry</a>
                             <p class="postion">
                                 Founder & CEO
                             </p>
@@ -368,7 +420,7 @@
                 <div class="col-xl-3 col-md-6">
                     <div class="team-box">
                         <div class="image">
-                            <a href="team.html"><img src="assets/images/layouts/team-04.png" alt=""></a>
+                            <a href="{% url 'team-page' %}"><img src="{% static 'assets/images/layouts/team-04.png' %}      " alt=""></a>
 
                             <ul class="list-social">
                                 <li><a href="#">
@@ -383,7 +435,7 @@
                             </ul>
                         </div>
                         <div class="content">
-                            <a href="team.html" class="h5 name">Bobby Fischer</a>
+                            <a href="{% url 'team-page' %}" class="h5 name">Bobby Fischer</a>
                             <p class="postion">
                                 Designer
                             </p>
@@ -410,10 +462,10 @@
                         <div class="content">
                             <h4 class="heading">Create your NFT portfolio</h4>
                             <p>Get udpated with news, tips & tricks</p>
-                            <a href="contact.html" class="action-btn"><span>Join Now</span></a>
+                            <a href="{% url 'contact-page' %}" class="action-btn"><span>Join Now</span></a>
                         
                         </div>
-                        <img src="assets/images/layouts/create.png" alt="">
+                        <img src="{% static 'assets/images/layouts/create.png' %}   " alt="">
                     </div>
                 </div>
             </div>

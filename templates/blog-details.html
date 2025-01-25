@@ -2,6 +2,58 @@
 {% load static %}
 {% block title %}Block detail{% endblock title %}
 {% block content %}
+
+    <!-- Header -->
+    <header id="header_main" class="header">
+        <div class="container big">
+            <div class="row">
+                <div class="col-12">
+                    <div class="header__body">
+                        <div class="header__logo">
+                            <a href="{% url 'home-page' %}">
+                                <img id="site-logo" src="{% static 'assets/images/logo/logo.png' %}"
+                                alt="Peson" width="160" height="38"
+                                data-retina="assets/images/logo/logo@2x.png" data-width="160"
+                                data-height="38">
+                            </a>
+                        </div>
+                        <div class="header__right">
+                            <nav id="main-nav" class="main-nav">
+                                <ul id="menu-primary-menu" class="menu">
+                                    <li class="menu-item menu-item-has-children menu-current-item">
+                                    <li class="menu-item current-item"><a href="{% url 'home-page' %}">Home</a></li> 
+                                    <li class="menu-item current-item"><a href="{% url 'blog-page' %}">Blog</a></li> 
+                                    <li class="menu-item current-item"><a href="{% url 'blogdetal-page' %}">Blog detail</a></li> 
+
+                                    <li class="menu-item">
+                                        <a href="{% url 'about-page' %}">About</a>
+                                    </li>
+                                        <li class="menu-item">
+                                        <a href="{% url 'team-page' %}">Team</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="{% url 'contact-page' %}">Contact</a>
+                                    </li>                                     
+                                </ul>
+                            </nav>
+                            <div class="mobile-button"><span></span></div>
+                        </div>
+
+                        <div class="header__action">
+                            {% comment %} <a href="#" class="search-btn">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="9.7659" cy="9.76639" r="8.98856" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M16.0176 16.4849L19.5416 19.9997" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>                                    
+                            </a> {% endcomment %}
+                            <a href="{% url 'contact-page' %}" class="action-btn"><span>Join Now</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- end Header -->
     <!-- Pagetitle -->
     <section class="page-title">
         <div class="shape"></div>
@@ -14,7 +66,7 @@
                             <h4 class="title">Blog Detail</h4>
     
                             <ul class="breacrumb">
-                                <li><a href="index-2.html">Home</a></li>
+                                <li><a href="{% url 'home-page' %}">Home</a></li>
                                 <li><p>Explore</p></li>
                                 <li><p>Blog</p></li>
                             </ul>
@@ -95,7 +147,7 @@
                             <div class="main">
                                 <p class="boild">The non-fungible tokens (NFTs) owners have zero intellectual property ownership of their content and only one NFT collection in the top 25 platforms by market capitalisation has attempted to confer intellectual property rights to the purchasers of digital arts, says a report.</p>
                                 <div class="image">
-                                    <img src="assets/images/layouts/blog-detail.png" alt="">
+                                    <img src="{% static 'assets/images/layouts/blog-detail.png' %}" alt="">
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                                 </div>
                                 <p class="mb-15">Most NFT operators "appear to have misled NFT purchasers" about the extent of their rights.</p>
@@ -113,10 +165,10 @@
                                 <div class="bottom">
                                     <p>Tags:</p>
                                     <ul class="list-tag">
-                                        <li><a href="blog-details.html">nfts</a></li>
-                                        <li><a href="blog-details.html">crypto</a></li>
-                                        <li><a href="blog-details.html">cyfonii</a></li>
-                                        <li><a href="blog-details.html">collection</a></li>
+                                        <li><a href="{% url 'blogdetal-page' %}">nfts</a></li>
+                                        <li><a href="{% url 'blogdetal-page' %}">crypto</a></li>
+                                        <li><a href="{% url 'blogdetal-page' %}">cyfonii</a></li>
+                                        <li><a href="{% url 'blogdetal-page' %}">collection</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -132,12 +184,12 @@
                                         
                                     <div>
                                         <div class="meta ">
-                                            <a href="blog-details.html"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <a href="{% url 'blogdetal-page' %}"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M2.9375 0.75V2.0625M9.0625 0.75V2.0625M0.75 9.9375V3.375C0.75 3.0269 0.888281 2.69306 1.13442 2.44692C1.38056 2.20078 1.7144 2.0625 2.0625 2.0625H9.9375C10.2856 2.0625 10.6194 2.20078 10.8656 2.44692C11.1117 2.69306 11.25 3.0269 11.25 3.375V9.9375M0.75 9.9375C0.75 10.2856 0.888281 10.6194 1.13442 10.8656C1.38056 11.1117 1.7144 11.25 2.0625 11.25H9.9375C10.2856 11.25 10.6194 11.1117 10.8656 10.8656C11.1117 10.6194 11.25 10.2856 11.25 9.9375M0.75 9.9375V5.5625C0.75 5.2144 0.888281 4.88056 1.13442 4.63442C1.38056 4.38828 1.7144 4.25 2.0625 4.25H9.9375C10.2856 4.25 10.6194 4.38828 10.8656 4.63442C11.1117 4.88056 11.25 5.2144 11.25 5.5625V9.9375" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
                                             February 18, 2022</a>
                                         </div>
-                                        <a href="blog-details.html" class="title">OpenSea NFT Marketplace to Solely Support Ethereum’s Upgraded...</a>
+                                        <a href="{% url 'blogdetal-page' %}" class="title">OpenSea NFT Marketplace to Solely Support Ethereum’s Upgraded...</a>
                                     </div>
 
                                 </div>
@@ -150,12 +202,12 @@
                                         
                                     <div>
                                         <div class="meta ">
-                                            <a href="blog-details.html"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <a href="{% url 'blogdetal-page' %}"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M2.9375 0.75V2.0625M9.0625 0.75V2.0625M0.75 9.9375V3.375C0.75 3.0269 0.888281 2.69306 1.13442 2.44692C1.38056 2.20078 1.7144 2.0625 2.0625 2.0625H9.9375C10.2856 2.0625 10.6194 2.20078 10.8656 2.44692C11.1117 2.69306 11.25 3.0269 11.25 3.375V9.9375M0.75 9.9375C0.75 10.2856 0.888281 10.6194 1.13442 10.8656C1.38056 11.1117 1.7144 11.25 2.0625 11.25H9.9375C10.2856 11.25 10.6194 11.1117 10.8656 10.8656C11.1117 10.6194 11.25 10.2856 11.25 9.9375M0.75 9.9375V5.5625C0.75 5.2144 0.888281 4.88056 1.13442 4.63442C1.38056 4.38828 1.7144 4.25 2.0625 4.25H9.9375C10.2856 4.25 10.6194 4.38828 10.8656 4.63442C11.1117 4.88056 11.25 5.2144 11.25 5.5625V9.9375" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
                                             February 18, 2022</a>
                                         </div>
-                                        <a href="blog-details.html" class="title">MTV Music Awards to See Eminem, Snoop Dogg Perform in Bored...</a>
+                                        <a href="{% url 'blogdetal-page' %}" class="title">MTV Music Awards to See Eminem, Snoop Dogg Perform in Bored...</a>
                                     </div>
 
                                 </div>
@@ -166,7 +218,7 @@
 
                                 <div class="comment-box s1">
                                     <div class="avt">
-                                        <img src="assets/images/layouts/avt-01.png" alt="">
+                                        <img src="{% static 'assets/images/layouts/avt-01.png' %}" alt="">
                                     </div>
                                     <div class="info">
                                         <h6 class="name">Annette Black</h6>
@@ -177,7 +229,7 @@
                                 </div>
                                 <div class="comment-box rep" >
                                     <div class="avt">
-                                        <img src="assets/images/layouts/avt-02.png" alt="">
+                                        <img src="{% static 'ssets/images/layouts/avt-02.png' %}" alt="">
                                     </div>
                                     <div class="info">
                                         <h6 class="name">Darlene Robertson</h6>
@@ -188,7 +240,7 @@
                                 </div>
                                 <div class="comment-box">
                                     <div class="avt">
-                                        <img src="assets/images/layouts/avt-03.png" alt="">
+                                        <img src="{% static 'assets/images/layouts/avt-03.png' %}" alt="">
                                     </div>
                                     <div class="info">
                                         <h6 class="name">Ronald Richards</h6>
@@ -199,7 +251,7 @@
                                 </div>
                                 <div class="comment-box">
                                     <div class="avt">
-                                        <img src="assets/images/layouts/avt-04.png" alt="">
+                                        <img src="{% static 'assets/images/layouts/avt-04.png' %}" alt="">
                                     </div>
                                     <div class="info">
                                         <h6 class="name">Theresa Webb</h6>
@@ -275,68 +327,68 @@
                             </h5>
                             <ul>
                                 <li>
-                                    <div class="image"><a href="#"><img src="assets/images/layouts/blog-01.png" alt=""></a></div>
+                                    <div class="image"><a href="#"><img src="{% static 'assets/images/layouts/blog-01.png' %}" alt=""></a></div>
 
                                     <div class="content">
                                         <div class="meta ">
-                                            <a href="blog-details.html"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <a href="{% url 'blogdetal-page' %}"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M2.9375 0.75V2.0625M9.0625 0.75V2.0625M0.75 9.9375V3.375C0.75 3.0269 0.888281 2.69306 1.13442 2.44692C1.38056 2.20078 1.7144 2.0625 2.0625 2.0625H9.9375C10.2856 2.0625 10.6194 2.20078 10.8656 2.44692C11.1117 2.69306 11.25 3.0269 11.25 3.375V9.9375M0.75 9.9375C0.75 10.2856 0.888281 10.6194 1.13442 10.8656C1.38056 11.1117 1.7144 11.25 2.0625 11.25H9.9375C10.2856 11.25 10.6194 11.1117 10.8656 10.8656C11.1117 10.6194 11.25 10.2856 11.25 9.9375M0.75 9.9375V5.5625C0.75 5.2144 0.888281 4.88056 1.13442 4.63442C1.38056 4.38828 1.7144 4.25 2.0625 4.25H9.9375C10.2856 4.25 10.6194 4.38828 10.8656 4.63442C11.1117 4.88056 11.25 5.2144 11.25 5.5625V9.9375" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
                                             February 18, 2022</a>
                                         </div>
-                                        <a href="blog-details.html" class="title">Meme NFTs - The new way to make money?</a>
+                                        <a href="{% url 'blogdetal-page' %}" class="title">Meme NFTs - The new way to make money?</a>
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="image"><a href="#"><img src="assets/images/layouts/blog-02.png" alt=""></a></div>
+                                    <div class="image"><a href="#"><img src="{% static 'assets/images/layouts/blog-02.png' %}" alt=""></a></div>
 
                                     <div class="content">
                                         <div class="meta ">
-                                            <a href="blog-details.html"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <a href="{% url 'blogdetal-page' %}"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M2.9375 0.75V2.0625M9.0625 0.75V2.0625M0.75 9.9375V3.375C0.75 3.0269 0.888281 2.69306 1.13442 2.44692C1.38056 2.20078 1.7144 2.0625 2.0625 2.0625H9.9375C10.2856 2.0625 10.6194 2.20078 10.8656 2.44692C11.1117 2.69306 11.25 3.0269 11.25 3.375V9.9375M0.75 9.9375C0.75 10.2856 0.888281 10.6194 1.13442 10.8656C1.38056 11.1117 1.7144 11.25 2.0625 11.25H9.9375C10.2856 11.25 10.6194 11.1117 10.8656 10.8656C11.1117 10.6194 11.25 10.2856 11.25 9.9375M0.75 9.9375V5.5625C0.75 5.2144 0.888281 4.88056 1.13442 4.63442C1.38056 4.38828 1.7144 4.25 2.0625 4.25H9.9375C10.2856 4.25 10.6194 4.38828 10.8656 4.63442C11.1117 4.88056 11.25 5.2144 11.25 5.5625V9.9375" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
                                             February 18, 2022</a>
                                         </div>
-                                        <a href="blog-details.html" class="title">How investible are NFTs?</a>
+                                        <a href="{% url 'blogdetal-page' %}" class="title">How investible are NFTs?</a>
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="image"><a href="#"><img src="assets/images/layouts/blog-03.png" alt=""></a></div>
+                                    <div class="image"><a href="#"><img src="{% static 'assets/images/layouts/blog-03.png' %}" alt=""></a></div>
 
                                     <div class="content">
                                         <div class="meta ">
-                                            <a href="blog-details.html"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <a href="{% url 'blogdetal-page' %}"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M2.9375 0.75V2.0625M9.0625 0.75V2.0625M0.75 9.9375V3.375C0.75 3.0269 0.888281 2.69306 1.13442 2.44692C1.38056 2.20078 1.7144 2.0625 2.0625 2.0625H9.9375C10.2856 2.0625 10.6194 2.20078 10.8656 2.44692C11.1117 2.69306 11.25 3.0269 11.25 3.375V9.9375M0.75 9.9375C0.75 10.2856 0.888281 10.6194 1.13442 10.8656C1.38056 11.1117 1.7144 11.25 2.0625 11.25H9.9375C10.2856 11.25 10.6194 11.1117 10.8656 10.8656C11.1117 10.6194 11.25 10.2856 11.25 9.9375M0.75 9.9375V5.5625C0.75 5.2144 0.888281 4.88056 1.13442 4.63442C1.38056 4.38828 1.7144 4.25 2.0625 4.25H9.9375C10.2856 4.25 10.6194 4.38828 10.8656 4.63442C11.1117 4.88056 11.25 5.2144 11.25 5.5625V9.9375" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
                                             February 18, 2022</a>
                                         </div>
-                                        <a href="blog-details.html" class="title">5 crypto predictions for second half of...</a>
+                                        <a href="{% url 'blogdetal-page' %}" class="title">5 crypto predictions for second half of...</a>
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="image"><a href="#"><img src="assets/images/layouts/blog-01.png" alt=""></a></div>
+                                    <div class="image"><a href="#"><img src="{% static 'assets/images/layouts/blog-01.png' %}" alt=""></a></div>
 
                                     <div class="content">
                                         <div class="meta ">
-                                            <a href="blog-details.html"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <a href="{% url 'blogdetal-page' %}"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M2.9375 0.75V2.0625M9.0625 0.75V2.0625M0.75 9.9375V3.375C0.75 3.0269 0.888281 2.69306 1.13442 2.44692C1.38056 2.20078 1.7144 2.0625 2.0625 2.0625H9.9375C10.2856 2.0625 10.6194 2.20078 10.8656 2.44692C11.1117 2.69306 11.25 3.0269 11.25 3.375V9.9375M0.75 9.9375C0.75 10.2856 0.888281 10.6194 1.13442 10.8656C1.38056 11.1117 1.7144 11.25 2.0625 11.25H9.9375C10.2856 11.25 10.6194 11.1117 10.8656 10.8656C11.1117 10.6194 11.25 10.2856 11.25 9.9375M0.75 9.9375V5.5625C0.75 5.2144 0.888281 4.88056 1.13442 4.63442C1.38056 4.38828 1.7144 4.25 2.0625 4.25H9.9375C10.2856 4.25 10.6194 4.38828 10.8656 4.63442C11.1117 4.88056 11.25 5.2144 11.25 5.5625V9.9375" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
                                             February 18, 2022</a>
                                         </div>
-                                        <a href="blog-details.html" class="title">NFT owners have zero ownership of their digital...</a>
+                                        <a href="{% url 'blogdetal-page' %}" class="title">NFT owners have zero ownership of their digital...</a>
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="image"><a href="#"><img src="assets/images/layouts/blog-02.png" alt=""></a></div>
+                                    <div class="image"><a href="#"><img src="{% static 'assets/images/layouts/blog-02.png' %}" alt=""></a></div>
 
                                     <div class="content">
                                         <div class="meta ">
-                                            <a href="blog-details.html"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <a href="{% url 'blogdetal-page' %}"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M2.9375 0.75V2.0625M9.0625 0.75V2.0625M0.75 9.9375V3.375C0.75 3.0269 0.888281 2.69306 1.13442 2.44692C1.38056 2.20078 1.7144 2.0625 2.0625 2.0625H9.9375C10.2856 2.0625 10.6194 2.20078 10.8656 2.44692C11.1117 2.69306 11.25 3.0269 11.25 3.375V9.9375M0.75 9.9375C0.75 10.2856 0.888281 10.6194 1.13442 10.8656C1.38056 11.1117 1.7144 11.25 2.0625 11.25H9.9375C10.2856 11.25 10.6194 11.1117 10.8656 10.8656C11.1117 10.6194 11.25 10.2856 11.25 9.9375M0.75 9.9375V5.5625C0.75 5.2144 0.888281 4.88056 1.13442 4.63442C1.38056 4.38828 1.7144 4.25 2.0625 4.25H9.9375C10.2856 4.25 10.6194 4.38828 10.8656 4.63442C11.1117 4.88056 11.25 5.2144 11.25 5.5625V9.9375" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
                                             February 18, 2022</a>
                                         </div>
-                                        <a href="blog-details.html" class="title">Ethereum, Polygon rise up to 17% over...</a>
+                                        <a href="{% url 'blogdetal-page' %}" class="title">Ethereum, Polygon rise up to 17% over...</a>
                                     </div>
                                 </li>
 
@@ -344,7 +396,7 @@
                         </div>
 
                         <div class="widget-sidebar widget-join">
-                            <img src="assets/images/logo/lolo-sm.png" alt="">
+                            <img src="{% static 'assets/images/logo/lolo-sm.png' %}" alt="">
 
                             <h5>Buy, Create and Sell NFTs Files</h5>
 
@@ -355,13 +407,13 @@
                                 Popular Tags
                             </h5>
                             <ul>
-                                <li><a href="blog-details.html">NFTs</a></li>
-                                <li><a href="blog-details.html">Blockchain</a></li>
-                                <li><a href="blog-details.html">Coin</a></li>
-                                <li><a href="blog-details.html">ICO</a></li>
-                                <li><a href="blog-details.html">cryptocurrency</a></li>
-                                <li><a href="blog-details.html">Ttoken</a></li>
-                                <li><a href="blog-details.html">Digital</a></li>
+                                <li><a href="{% url 'blogdetal-page' %}">NFTs</a></li>
+                                <li><a href="{% url 'blogdetal-page' %}">Blockchain</a></li>
+                                <li><a href="{% url 'blogdetal-page' %}">Coin</a></li>
+                                <li><a href="{% url 'blogdetal-page' %}">ICO</a></li>
+                                <li><a href="{% url 'blogdetal-page' %}">cryptocurrency</a></li>
+                                <li><a href="{% url 'blogdetal-page' %}">Ttoken</a></li>
+                                <li><a href="{% url 'blogdetal-page' %}">Digital</a></li>
 
                             </ul>
                         </div>
